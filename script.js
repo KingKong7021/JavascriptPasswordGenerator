@@ -18,12 +18,7 @@ function generatePassword(){
   var numbers = "0123456789";
   var specialcharacters = "!@#$%^&*<>{}[]-_+=/|"; 
   var possiblecharacters = "";
-  var password = "";
-  var includelower;
-  var includeupper;
-  var includenumber;
-  var includespecialcharacter;
-
+ 
   //TBD2: Ask the user for password length and store it in variable password length. Make sure you convert string into number format
   passwordLength=parseInt(window.prompt("give a password length between 8 and 128"));
   
@@ -34,23 +29,23 @@ function generatePassword(){
   } 
    //TBD3: Ask the user to confirm if they want to include lower case characters into password creation
   else {
-    let lower = confirm ("Would you like to use lowercase letters?");
-    if(lower){
+    let lowerConfirm = confirm ("Would you like to use lowercase letters?");
+    if(lowerConfirm){
       possiblecharacters += lower
     };
   //TBD3a: Ask the user to confirm if they want to include upper case characters into password creation
-    let upper = confirm ("Would you like to use uppercase letters?");
-    if(upper){
+    let upperConfirm = confirm ("Would you like to use uppercase letters?");
+    if(upperConfirm){
       possiblecharacters += upper
     };
   //TBD3b: Ask the user to confirm if they want to include numbers into password creation
-    let numbers = confirm ("Would you like to use numbers?");
-    if(numbers){
+    let numbersConfirm = confirm ("Would you like to use numbers?");
+    if(numbersConfirm){
       possiblecharacters += numbers
     };
   //TBD3c: Ask the user to confirm if they want to include special characters into password creation
-    let specialcharacters = confirm ("Would you like to use special characters");
-    if(specialcharacters){
+    let specialcharactersConfirm = confirm ("Would you like to use special characters");
+    if(specialcharactersConfirm){
       specialcharacters += specialcharacters
     };
     if (
@@ -62,7 +57,7 @@ function generatePassword(){
   }
   let pwd = "";
   for (let i=0; i<passwordLength; i++){
-    pwd += possiblecharacters.charAt(Math.floor(Math.random() * possiblecharacters.passwordLength))
+    pwd += possiblecharacters.charAt(Math.floor(Math.random() * possiblecharacters.length))
   }
   return pwd
 }
